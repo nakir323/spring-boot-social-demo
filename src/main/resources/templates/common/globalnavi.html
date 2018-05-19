@@ -1,0 +1,26 @@
+<html lang="ja" xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/extras/spring-security4">
+<header th:fragment="globalnavi">
+	<nav class="navbar navbar-expand-lg navbar-default">
+		<a class="navbar-brand" href="/">Spring Social Demo</a>
+
+		<div class="collapse navbar-collapse" id="navbarSupportedContent">
+			<ul class="navbar-nav mr-auto">
+				<li sec:authorize="isAuthenticated()">Hello, <span
+					sec:authentication="principal.user.displayName">displayName</span>!
+				</li>
+			</ul>
+			<form th:action="@{/logout}" method="post"
+				class="form-inline my-2 my-lg-0">
+				<div sec:authorize="isAnonymous()">
+					<a class="btn btn-outline-success my-2 my-sm-0" href="/signin">Sign
+						in</a>
+				</div>
+				<div sec:authorize="isAuthenticated()">
+					<input type="submit" class="btn btn-outline-success my-2 my-sm-0"
+						value="Log out">
+				</div>
+			</form>
+		</div>
+	</nav>
+</header>

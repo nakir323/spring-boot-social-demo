@@ -1,0 +1,8 @@
+application.properties
+.springBeans
+logs/
+target/
+.settings/
+.project
+.classpath
+bin/
