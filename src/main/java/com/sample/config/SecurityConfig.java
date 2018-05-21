@@ -21,11 +21,10 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
-		http.authorizeRequests().antMatchers("/", "/deck/**", "/deckbuilder/**", "/signin", "/auth/**").permitAll()
-				.anyRequest().authenticated().and().formLogin().loginProcessingUrl("/authenticate").loginPage("/signin")
-				.failureUrl("/signin?error").defaultSuccessUrl("/", true).usernameParameter("username")
-				.passwordParameter("password").and().logout().logoutSuccessUrl("/").and()
-				.apply(new SpringSocialConfigurer());
+		http.authorizeRequests().antMatchers("/", "/signin", "/auth/**").permitAll().anyRequest().authenticated().and()
+				.formLogin().loginProcessingUrl("/authenticate").loginPage("/signin").failureUrl("/signin?error")
+				.defaultSuccessUrl("/", true).usernameParameter("username").passwordParameter("password").and().logout()
+				.logoutSuccessUrl("/").and().apply(new SpringSocialConfigurer());
 	}
 
 	@Bean
