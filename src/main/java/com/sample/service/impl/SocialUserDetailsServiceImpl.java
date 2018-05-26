@@ -7,15 +7,15 @@ import org.springframework.social.security.SocialUserDetails;
 import org.springframework.social.security.SocialUserDetailsService;
 import org.springframework.stereotype.Service;
 
-import com.sample.dao.UserRepository;
 import com.sample.data.SocialUserData;
 import com.sample.entity.User;
+import com.sample.repository.UserRepository;
 
 import lombok.RequiredArgsConstructor;
 
 @Service
 @RequiredArgsConstructor(onConstructor = @__(@Autowired))
-public class SocialUsersDetailServiceImpl implements SocialUserDetailsService {
+public class SocialUserDetailsServiceImpl implements SocialUserDetailsService {
 
 	private final UserRepository userRepository;
 

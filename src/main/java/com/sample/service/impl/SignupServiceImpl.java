@@ -8,8 +8,8 @@ import org.springframework.social.connect.UserProfile;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.sample.dao.UserRepository;
 import com.sample.entity.User;
+import com.sample.repository.UserRepository;
 import com.sample.service.spec.SignupService;
 
 import lombok.RequiredArgsConstructor;
